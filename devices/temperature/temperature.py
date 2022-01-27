@@ -1,12 +1,11 @@
 from time import sleep_ms, sleep
-
 from devices.settings_for_devices import ds_sensor_ds18x20, roms
 
 
 def get_temp():
+    is_temp = 0
     ds_sensor_ds18x20.convert_temp()
     sleep_ms(750)
     for rom in roms:
-        print(rom)
-        print(ds_sensor_ds18x20.read_temp(rom))
-    sleep(5)
+        is_temp = ds_sensor_ds18x20.read_temp(rom)
+    return is_temp

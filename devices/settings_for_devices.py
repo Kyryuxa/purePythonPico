@@ -9,14 +9,8 @@ rtc_1307 = DS1307(i2c_rtc_ds1307)
 # Connect DS18b20
 ds_pin_ds18x20 = Pin(22)
 ds_sensor_ds18x20 = ds18x20.DS18X20(onewire.OneWire(ds_pin_ds18x20))
-
 roms = ds_sensor_ds18x20.scan()
-if len(roms) > 0:
-    state_ds18x20 = True
-    print('Found DS devices: ', roms)
-else:
-    state_ds18x20 = False
-    print('Not found DS devices')
+print('Found DS devices')
 
 # Connect LED
 led = Pin(25)
