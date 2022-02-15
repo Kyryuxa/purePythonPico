@@ -3,7 +3,7 @@ from devices.clock.ds1307 import DS1307
 from devices.temperature import ds18x20, onewire
 
 # Connect DS1307
-i2c_rtc_ds1307 = I2C(0, scl=Pin(1), sda=Pin(0), freq=100000)
+i2c_rtc_ds1307 = I2C(1, scl=Pin(3), sda=Pin(2), freq=100000)
 rtc_1307 = DS1307(i2c_rtc_ds1307)
 
 # Connect DS18b20
